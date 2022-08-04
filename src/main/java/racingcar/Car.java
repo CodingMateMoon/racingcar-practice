@@ -31,7 +31,17 @@ public class Car {
             this.position++;
     }
 
-    //private -> protected 메소드 시그니쳐 변경하지 않고 테스트 가능한 구조로 변경
+    public void move(int randomNo) {
+        if(randomNo >= FORWARD_NUM)
+            this.position++;
+    }
+
+    public void move(MovingStrategy movingStrategy) {
+        if(movingStrategy.movable())
+            this.position++;
+    }
+
+    //private -> protected 메소드 시그니처 변경하지 않고 테스트 가능한 구조로 변경
     protected int getRandomNo() {
         Random random = new Random();
         return random.nextInt(MAX_BOUND);

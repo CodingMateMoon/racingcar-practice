@@ -8,13 +8,13 @@ public class CarTest {
     @Test
     void move() {
 
-        Car moon = new Car("moon"){
+        Car moon = new Car("moon");
+        moon.move(new MovingStrategy() {
             @Override
-            protected int getRandomNo() {
-                return 4;
+            public boolean movable() {
+                return true;
             }
-        };
-        moon.move();
+        });
         assertThat(moon.getPosition()).isEqualTo(1);
     }
 
