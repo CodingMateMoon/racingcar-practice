@@ -18,7 +18,7 @@ public class CarTest {
         });
         */
         moon.move(()->true);
-        assertThat(moon.getPosition()).isEqualTo(1);
+        assertThat(moon.getPosition()).isEqualTo(new Position(1));
     }
 
     @Test
@@ -26,6 +26,6 @@ public class CarTest {
 
         Car moon = new Car("moon");
         moon.move(()->false);
-        assertThat(moon.getPosition()).isEqualTo(0);
+        assertThat(moon.getPosition()).isEqualTo(new Position());
     }
 }

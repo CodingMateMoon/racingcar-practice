@@ -18,4 +18,10 @@ public class PositionTest {
 
         assertThatThrownBy(() -> new Position(-1)).isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void move() {
+        Position position = new Position(3);
+        assertThat(position.move()).isEqualTo(new Position(4));
+    }
 }
