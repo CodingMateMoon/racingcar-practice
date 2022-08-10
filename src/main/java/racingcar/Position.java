@@ -32,7 +32,7 @@ public class Position {
     /* immutable 객체 -> mutable 객체. garbage collection 성능 이슈가 생기는 경우 불변객체에서 가변객체로 변환
     public Position move() {
         this.position++;
-        return new Position(this.position + 1)
+        return new Position(this.position + 1);
     }
      */
 
