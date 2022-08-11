@@ -1,11 +1,9 @@
 package racingcar;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class Car {
 
 
-//    private final String name;
+    //    private final String name;
     private final Name name;
     private Position position;
     private int positionBefore = 0;
@@ -19,10 +17,17 @@ public class Car {
         this.position = new Position();
     }
      */
+
     public Car(String name) {
 
         this.name = new Name(name);
-        this.position = new Position();
+        this.position = new Position(0);
+    }
+
+    public Car(String name, int position) {
+
+        this.name = new Name(name);
+        this.position = new Position(position);
     }
 
     public int getPositionBefore() {
@@ -34,12 +39,16 @@ public class Car {
     }
 
     public void move(MovingStrategy movingStrategy) {
-        if(movingStrategy.movable())
+        if (movingStrategy.movable())
             position.move();
     }
 
 
     public Position getPosition() {
         return this.position;
+    }
+
+    public boolean positionIsBiggerThan(Position maxPosition) {
+        return position.isBiggerThan(maxPosition);
     }
 }

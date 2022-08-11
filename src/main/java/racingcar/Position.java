@@ -40,4 +40,8 @@ public class Position {
         this.position++;
         return this;
     }
+
+    public boolean isBiggerThan(Position maxPosition) {
+        return this.position >= maxPosition.position;
+    }
 }
